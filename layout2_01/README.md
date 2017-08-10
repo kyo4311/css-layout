@@ -1,7 +1,8 @@
 # 已知高度两列布局
 
-## 布局要求：
+```
 布局要求：高度固定为100px,左边固定300px，右边自适应。
+```
 
 根据以上要求，我们先写一些通用的css样式
 ```css
@@ -16,7 +17,7 @@
 
 css
 ```css
-.layout.float .left{float: left;}\
+.layout.float .left{float: left;}
 ```
 html
 ```html
