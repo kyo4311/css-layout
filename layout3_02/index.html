@@ -29,16 +29,16 @@ body{margin: 0; padding: 0;}
 .layout.flex .center{flex-grow: 1;}
 
 /* 定位布局 */
-.layout.absolute article{ position: relative; overflow: hidden; }
+.layout.absolute article{ position: relative; }
 .layout.absolute .left{position: absolute; left: 0; top: 0; bottom: 0;}
 .layout.absolute .right{position: absolute; right: 0; top: 0; bottom: 0;}
-.layout.absolute .center{padding: 0 200px 0 300px;}
+.layout.absolute .center{padding: 0 200px 0 300px; overflow: hidden;}
 
 /* table布局 */
 .layout.table article{display: table; width: 100%;}
-.layout.table .left{display: table-cell; vertical-align: top;}
-.layout.table .cetner{display: table-cell;vertical-align: top; overflow: hidden;}
-.layout.table .right{display: table-cell;vertical-align: top;}
+.layout.table .left{display: table-cell; }
+.layout.table .cetner{display: table-cell;}
+.layout.table .right{display: table-cell;}
 
 /* 使用网格布局 */
 .layout.grid article{display: grid; grid-template-columns:300px auto 200px;}
@@ -79,7 +79,7 @@ body{margin: 0; padding: 0;}
 
     <section class="layout absolute">
         <article>
-            <div class="left">left</div>
+
             <div class="center">
                 <p>使用定位布局</p>
                 <p>使用定位布局</p>
@@ -87,7 +87,9 @@ body{margin: 0; padding: 0;}
                 <p>使用定位布局</p>
                 <p>使用定位布局</p>
             </div>
+               <div class="left">left</div>
             <div class="right">right</div>
+            
         </article>
     </section>
 
