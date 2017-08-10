@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>layout一行两列</title>
+<style>
+*{margin: 0; padding: 0;}
+.left{background:#ccc; width: 300px;}
+.right{background:#eee;}
+.layout, .left, .right{height: 100px;}
+.layout{margin-bottom: 20px;}
+
+/* float 布局 */
+.layout.float .left{float: left;}
+
+/* flex 布局 */
+.layout.flex article{ display: flex; }
+.layout.flex .right{flex-grow: 1;}
+
+/* 定位布局 */
+.layout.absolute article{ position: relative; }
+.layout.absolute .left{position: absolute; left: 0; top: 0;}
+.layout.absolute .right{position: absolute; left: 300px; right: 0; top: 0;}
+
+/* table布局 */
+.layout.table article{display: table; width: 100%;}
+.layout.table .left{display: table-cell;}
+.layout.table .right{display: table-cell;}
+
+/* 使用网格布局 */
+.layout.grid article{display: grid; grid-template-columns:300px auto;}
+</style>
+</head>
+<body>
+
+    <h1>已知高度，两列布局</h1>
+    <p>布局要求：高度固定为100px,左边固定300px，右边自适应。</p>
+
+    <section class="layout float">
+        <article>
+            <div class="left"></div>
+            <div class="right">使用float布局</div>
+        </article>
+    </section>
+
+    <section class="layout flex">
+        <article>
+            <div class="left"></div>
+            <div class="right">使用flex布局</div>
+        </article>
+    </section>
+
+    <section class="layout absolute">
+        <article>
+            <div class="left"></div>
+            <div class="right">使用定位布局</div>
+        </article>
+    </section>
+
+    <section class="layout table">
+        <article>
+            <div class="left"></div>
+            <div class="right">使用表格布局</div>
+        </article>
+    </section>
+
+    <section class="layout grid">
+        <article>
+            <div class="left"></div>
+            <div class="right">使用网格布局</div>
+        </article>
+    </section>
+</body>
+</html>
