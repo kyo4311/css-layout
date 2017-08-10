@@ -1,7 +1,7 @@
-# 已知高度，三列布局
+# 未知高度，三列布局
 
 ```
-布局要求：高度固定为100px, 左边固定300px，右边200px 中间自适应。
+布局要求：左边固定300px，右边200px 中间自适应。高度自适应
 ```
 
 根据以上要求，我们先写一些通用的css样式
@@ -18,8 +18,13 @@ body{margin: 0; padding: 0;}
 
 css
 ```css
-.layout.float .left{float: left;}
+.layout.float .left{float: left;  }
 .layout.float .right{float: right;}
+.layout.float .center{overflow: hidden;}
+.layout.float .left,
+.layout.float .center,
+.layout.float .right{padding-bottom: 9999px;margin-bottom: -9999px;}
+.layout.float article{overflow: hidden;}
 ```
 html
 ```html
@@ -27,7 +32,13 @@ html
     <article>
         <div class="left">left</div>
         <div class="right">right</div>
-        <div class="center">使用float布局</div>
+        <div class="center">
+            <p>使用float布局</p>
+            <p>使用float布局</p>
+            <p>使用float布局</p>
+            <p>使用float布局</p>
+            <p>使用float布局</p>
+        </div>
     </article>
 </section>
 ```
@@ -44,7 +55,13 @@ html
 <section class="layout flex">
     <article>
         <div class="left">left</div>
-        <div class="center">使用flex布局</div>
+        <div class="center">
+            <p>使用flex布局</p>
+            <p>使用flex布局</p>
+            <p>使用flex布局</p>
+            <p>使用flex布局</p>
+            <p>使用flex布局</p>
+        </div>
         <div class="right">right</div>
     </article>
 </section>
@@ -55,20 +72,26 @@ html
 css
 ```css
 .layout.absolute article{ position: relative; }
-.layout.absolute .left{position: absolute; left: 0; top: 0;}
-.layout.absolute .right{position: absolute; right: 0; top: 0;}
-.layout.absolute .center{position: absolute; left: 300px; right: 200px; top: 0;}
+.layout.absolute .left{position: absolute; left: 0; top: 0; bottom: 0;}
+.layout.absolute .right{position: absolute; right: 0; top: 0; bottom: 0;}
+.layout.absolute .center{padding: 0 200px 0 300px; overflow: hidden;}
 ```
 
 html
 ```html
 <section class="layout absolute">
-    <article>
-        <div class="left">left</div>
-        <div class="center">使用定位布局</div>
-        <div class="right">right</div>
-    </article>
-</section>
+        <article>
+            <div class="center">
+                <p>使用定位布局</p>
+                <p>使用定位布局</p>
+                <p>使用定位布局</p>
+                <p>使用定位布局</p>
+                <p>使用定位布局</p>
+            </div>
+               <div class="left">left</div>
+            <div class="right">right</div>
+        </article>
+    </section>
 ```
 
 ### 使用表格布局
@@ -77,7 +100,7 @@ css
 ```css
 .layout.table article{display: table; width: 100%;}
 .layout.table .left{display: table-cell;}
-.layout.table .cetner{display: table-cell;}
+.layout.table .center{display: table-cell;}
 .layout.table .right{display: table-cell;}
 ```
 
@@ -86,7 +109,12 @@ html
 <section class="layout table">
     <article>
         <div class="left">left</div>
-        <div class="center">使用表格布局</div>
+        <div class="center">
+            <p>使用表格布局</p>
+            <p>使用表格布局</p>
+            <p>使用表格布局</p>
+            <p>使用表格布局</p>
+        </div>
         <div class="right">right</div>
     </article>
 </section>
@@ -104,7 +132,13 @@ html
 <section class="layout grid">
     <article>
         <div class="left">left</div>
-        <div class="center">使用网格布局</div>
+        <div class="center">
+            <p>使用网格布局</p>
+            <p>使用网格布局</p>
+            <p>使用网格布局</p>
+            <p>使用网格布局</p>
+            <p>使用网格布局</p>
+        </div>
         <div class="right">right</div>
     </article>
 </section>
