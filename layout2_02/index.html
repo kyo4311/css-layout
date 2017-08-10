@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>layout一行两列</title>
+<style>
+body{margin: 0; padding: 0;}
+.left{background:#ccc; width: 300px;}
+.right{background:#eee;}
+.layout{margin-bottom: 20px;}
+
+/* float 布局 */
+.layout.float article{overflow: hidden;}
+.layout.float .left{float: left;}
+.layout.float .right{overflow: hidden;}
+
+.layout.float .left,
+.layout.float .right{padding-bottom: 9999px; margin-bottom: -9999px;}
+
+/* flex 布局 */
+.layout.flex article{ display: flex; }
+.layout.flex .right{flex-grow: 1;}
+
+/* 定位布局 */
+.layout.absolute article{ position: relative;}
+.layout.absolute .left{position: absolute; left: 0; top: 0; bottom: 0; }
+.layout.absolute .right{padding: 0 0 0 300px; overflow: hidden;  }
+
+/* table布局 */
+.layout.table article{display: table; width: 100%;}
+.layout.table .left{display: table-cell;}
+.layout.table .right{display: table-cell;}
+
+/* 使用网格布局 */
+.layout.grid article{display: grid; grid-template-columns:300px auto;}
+</style>
+</head>
+<body>
+
+    <h1>未知高度，两列布局</h1>
+    <p>布局要求：左边固定300px，右边自适应，高度自适应</p>
+
+    <section class="layout float">
+        <article>
+            <div class="left">left</div>
+            <div class="right">
+                <p>float布局</p>
+                <p>float布局</p>
+                <p>float布局</p>
+                <p>float布局</p>
+            </div>
+        </article>
+    </section>
+
+    <section class="layout flex">
+        <article>
+            <div class="left">
+                <p>flex布局</p>
+                <p>flex布局</p>
+                <p>flex布局</p>
+                <p>flex布局</p>
+            </div>
+            <div class="right">
+                <p>flex布局</p>
+            </div>
+        </article>
+    </section>
+
+    <section class="layout table">
+        <article>
+            <div class="left">left</div>
+            <div class="right">
+                <p>table布局</p>
+                <p>table布局</p>
+                <p>table布局</p>
+                <p>table布局</p>
+            </div>
+        </article>
+    </section>
+
+    <section class="layout absolute">
+        <article>
+            <div class="left">left</div>
+            <div class="right">
+                <p>定位布局</p>
+                <p>定位布局</p>
+                <p>定位布局</p>
+            </div>
+        </article>
+    </section>
+
+    <section class="layout grid">
+        <article>
+            <div class="left">
+                left
+            </div>
+            <div class="right">
+                <p>网格布局</p>
+                <p>网格布局</p>
+                <p>网格布局</p>
+                <p>网格布局</p>
+                <p>网格布局</p>
+            </div>
+        </article>
+    </section>
+</body>
+</html>
