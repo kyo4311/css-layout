@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>靠内容浮动布局</title>
+<style>
+.box{
+    width: 1000px;
+    height: 2000px;
+    margin: auto;
+    background: #eee;
+}
+.left,.right{
+    width: 100px;
+    height: 100px;
+    background: #222;
+    position: fixed;
+    color: #fff;
+    text-align: center;
+    line-height: 100px;
+}
+.left{
+    bottom: 100px;
+    left: 50%;
+    margin-left: -600px;
+}
+
+.right{
+    bottom: 100px;
+    left: 50%;
+    margin-left: 500px;
+}
+</style>
+</head>
+<body>
+
+<div class="box"></div>
+<div class="left">Left</div>
+<div class="right">Right</div>
+
+</body>
+</html>
