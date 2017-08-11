@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>上方固定，下方自适应</title>
+<style>
+.box{
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ccc;
+}
+
+.child{
+    width: 100px;
+    height: 100px;
+    background: yellow;
+    text-align: center;
+    line-height: 100px;
+}
+
+
+
+.table{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+.table .child{
+    display: inline-block;
+}
+
+
+.position{
+    position: relative;
+}
+
+.position .child{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /*margin:-50px 0 0 -50px; */
+    transform: translate(-50%, -50%);    /* 50%为自身尺寸的一半 */
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.grid{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+</style>
+</head>
+<body>
+
+<div class="box flex">
+    <div class="child">弹性布局</div>
+</div>
+
+<div class="box table">
+    <div class="child">表格布局</div>
+</div>
+
+<div class="box position">
+    <div class="child">绝对定位</div>
+</div>
+
+<div class="box grid">
+    <div class="child">网格布局</div>
+</div>
+</body>
+</html>
